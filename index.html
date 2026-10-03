@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Prabhat Yadav — Full-Stack Developer</title>
+<meta name="description" content="B.Tech CSE (2027). RAG pipelines, FastAPI services, real-time full-stack apps, and developer tooling." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,600;1,9..144,700&family=Caveat:wght@500;600&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/cursor.css" />
+</head>
+<body>
+
+<nav><div class="wrap">
+  <div class="logo">prabhat.dev</div>
+  <div class="navlinks">
+    <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a>
+    <a href="#achievements">Achievements</a><a href="#ask">Ask AMA</a><a href="#contact">Contact</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="wave">Hey, I'm</div>
+  <h1 class="name"><span class="first">Prabhat</span> <span class="last">Yadav</span></h1>
+  <div class="hero-title" id="hero-title"></div>
+  <p class="tagline" id="tagline"></p>
+  <div class="btn-row">
+    <a id="resume-btn" class="btn btn-p" download>Download Resume</a>
+    <a href="#contact" class="btn btn-g">Say hi</a>
+  </div>
+  <div class="stats" id="stats"></div>
+</div></header>
+
+<section id="about"><div class="wrap">
+  <div class="tag">a little about me</div>
+  <h2 class="sec-title">Who I am</h2>
+  <p class="about" id="about-text"></p>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <div class="tag">what I work with</div>
+  <h2 class="sec-title">Skills</h2>
+  <div id="skills-list"></div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <div class="tag">things I've built</div>
+  <h2 class="sec-title">Projects</h2>
+  <div class="projects" id="projects-list"></div>
+</div></section>
+
+<section id="achievements"><div class="wrap">
+  <div class="tag">the receipts</div>
+  <h2 class="sec-title">Achievements</h2>
+  <div class="ach" id="ach-list"></div>
+</div></section>
+
+<section id="ask"><div class="wrap">
+  <div class="tag">talk to my clone</div>
+  <h2 class="sec-title">Ask me anything</h2>
+  <div class="chat">
+    <div class="chat-copy">
+      <p>A small keyword-matched assistant that knows my resume and projects.</p>
+      <p>Ask about what I've built, my stack, or whether I'm open to roles.</p>
+    </div>
+    <div class="mock">
+      <div class="mock-head">ama.prabhat</div>
+      <div id="log"><div class="bubble bot">Hey 👋 Ask me about Prabhat's projects, skills or availability — or tap a question below.</div></div>
+      <div class="ex" id="examples"></div>
+      <div class="in-row">
+        <input id="chat-input" type="text" placeholder="Ask about me or my projects..." />
+        <button id="chat-send" aria-label="Send">➤</button>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <div class="tag">let's talk</div>
+  <h2 class="sec-title">Contact</h2>
+  <div class="contact">
+    <div class="c-info" id="contact-links"></div>
+    <form id="contact-form">
+      <input type="text" name="name" placeholder="Your name" required />
+      <input type="email" name="email" placeholder="Your email" required />
+      <textarea name="message" placeholder="Message" required></textarea>
+      <button type="submit" class="send">Send message</button>
+    </form>
+  </div>
+</div></section>
+
+<footer id="footer"></footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/cursor.js"></script>
+</body>
+</html>

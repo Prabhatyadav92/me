@@ -1,0 +1,37 @@
+/* Football cursor — only active on devices with a real mouse (see js/cursor.js) */
+html.fb-on, html.fb-on * { cursor: none !important; }
+#fb { position: fixed; left: 0; top: 0; z-index: 99999; pointer-events: none; opacity: 0; transition: opacity .2s; will-change: transform; }
+#fb.show { opacity: 1; }
+#fb > * { position: absolute; left: 0; top: 0; }
+.fb-ball { width: 30px; height: 30px; margin: -15px 0 0 -15px; transition: filter .2s, scale .2s; will-change: transform; }
+.fb-ball svg { width: 100%; height: 100%; display: block; filter: drop-shadow(0 2px 3px rgba(0,0,0,.35)); }
+.fb-ring { width: 56px; height: 56px; margin: -28px 0 0 -28px; border-radius: 50%; border: 3px solid #2fd35f; opacity: 0; scale: .5; transition: opacity .2s, scale .25s; }
+.fb-streak { height: 6px; margin-top: -3px; width: 0; transform-origin: 100% 50%; border-radius: 6px; background: linear-gradient(to left, rgba(255,255,255,.9), rgba(255,255,255,0)); opacity: 0; transition: opacity .15s; }
+.fb-plus { width: 18px; height: 18px; margin: 6px 0 0 6px; border-radius: 50%; background: #2fd35f; color: #fff; font: 700 14px/18px sans-serif; text-align: center; opacity: 0; scale: .4; transition: .2s; }
+.fb-txt { width: 2px; height: 34px; margin: -17px 0 0 -1px; background: #26241F; opacity: 0; transition: opacity .2s; }
+
+/* per-mode looks */
+#fb[data-m="glow"] .fb-ball svg { filter: drop-shadow(0 0 8px #2fd35f) drop-shadow(0 0 16px rgba(47,211,95,.7)); }
+#fb[data-m="fire"] .fb-ball svg { filter: drop-shadow(0 0 7px #ff8a1f) drop-shadow(0 0 14px rgba(255,90,0,.7)); }
+#fb[data-m="ring"] .fb-ring { opacity: 1; scale: 1; }
+#fb[data-m="ring"] .fb-ball { scale: .85; }
+#fb[data-m="kick"] .fb-streak { opacity: 1; }
+#fb[data-m="drag"] .fb-ring { opacity: 1; scale: .9; border-style: dashed; border-color: #8a867a; }
+#fb[data-m="drag"] .fb-plus { opacity: 1; scale: 1; }
+#fb[data-m="text"] .fb-txt { opacity: 1; }
+#fb[data-m="text"] .fb-ball { scale: .55; margin-top: -32px; }
+
+/* particles */
+.fb-p { position: fixed; left: 0; top: 0; z-index: 99998; pointer-events: none; }
+.fb-p.ghost { width: 18px; height: 18px; margin: -9px 0 0 -9px; border-radius: 50%; background: #fff; border: 2px solid #222; opacity: .5; animation: fbghost .55s ease-out forwards; }
+.fb-p.leaf { width: 7px; height: 3px; margin: -1px 0 0 -3px; border-radius: 3px; background: #2fd35f; animation: fbleaf .7s ease-out forwards; }
+.fb-p.flame { width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 50%; background: radial-gradient(circle, #fff3a0, #ff9a1f 55%, rgba(255,60,0,0)); animation: fbflame .55s ease-out forwards; }
+@keyframes fbghost { to { opacity: 0; scale: .3; } }
+@keyframes fbleaf { to { opacity: 0; translate: var(--dx) var(--dy); rotate: 200deg; } }
+@keyframes fbflame { to { opacity: 0; scale: .2; translate: var(--dx) var(--dy); } }
+
+/* style switcher (set switcher:false in js/cursor.js to remove) */
+.fb-switch { position: fixed; right: 16px; bottom: 16px; z-index: 99990; background: var(--ink); color: var(--card); border: 1.5px solid var(--ink); border-radius: 22px; padding: 8px 14px; font: 600 12px 'JetBrains Mono', monospace; }
+.fb-switch:hover { background: var(--coral); }
+@media (pointer: coarse) { .fb-switch { display: none; } }
+@media (prefers-reduced-motion: reduce) { .fb-p { display: none; } }
